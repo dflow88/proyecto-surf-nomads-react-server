@@ -59,7 +59,7 @@ exports.loginUser = async (req, res) => {
             payload,
             process.env.SECRET,
             {
-                expiresIn: 3600000
+                expiresIn: 60000
             },
             (error, token) => {
                 if(error) throw error

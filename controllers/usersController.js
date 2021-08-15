@@ -49,7 +49,7 @@ exports.createUser = async (req, res) => {
             payload, //datos que se envian al front
             process.env.SECRET,
             {
-                expiresIn: 60000
+                expiresIn: 60
             },
             (error, token) => {
                 if(error) throw error
