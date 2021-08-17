@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const usersSchema = mongoose.Schema({
-
+    role: {
+        type: String,
+        required: true
+    },
     firstName: {
         type: String,
         required: true
@@ -22,6 +25,9 @@ const usersSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    experienceYrs: String,
+    city: String,
+    description: String,
     picture: String
 },  {
     timestamps: true

@@ -15,7 +15,7 @@ exports.createUser = async (req, res) => {
         })
     }
 
-    const { firstName, lastName, username, email, password } = req.body
+    const { firstName, lastName, username, email, password, role } = req.body
 
 
     try {
@@ -31,7 +31,8 @@ exports.createUser = async (req, res) => {
             lastName,
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            role
         })
 
 
@@ -49,7 +50,7 @@ exports.createUser = async (req, res) => {
             payload, //datos que se envian al front
             process.env.SECRET,
             {
-                expiresIn: 60
+                expiresIn: 10000
             },
             (error, token) => {
                 if(error) throw error
