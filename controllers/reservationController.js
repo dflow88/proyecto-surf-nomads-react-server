@@ -15,6 +15,8 @@ exports.getReservations = async (req,res) => {
 
 }
 
+
+
 exports.createReservation = async (req, res) => {
 
     const { startDate, endDate, user, guide, tour, totalPrice } = await req.body

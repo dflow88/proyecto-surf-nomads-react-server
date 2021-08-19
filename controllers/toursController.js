@@ -39,7 +39,9 @@ exports.findTour = async (req, res) => {
 
     try {
         
-        const response = await Tour.findById(tourId).populate("amenities").populate("guide")
+        const response = await Tour.findById(tourId).populate({
+            path: "guide"
+        })
         console.log(response)
         res.json(response)
 
