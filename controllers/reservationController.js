@@ -5,9 +5,9 @@ exports.getReservations = async (req,res) => {
 
     try {
 
-        const reservations = await Reservation.find({})
-
-        res.json(reservations)
+        const reservationsUser = await Reservation.find({}).populate("user")
+        const reservationsTour = await Reservation.find({}).populate("tour")
+        res.json([reservationsUser, reservationsTour[0].tour])
 
     } catch (error) {
 
@@ -17,27 +17,26 @@ exports.getReservations = async (req,res) => {
 
 exports.createReservation = async (req, res) => {
 
-    const { startDate, endDate, email, name, lastName, tourName, totalPrice } = await req.body
+    const { startDate, endDate, user, guide, tour, totalPrice } = await req.body
 
     try {
         
-        console.log(name)
-        const response = await Reservation.create({ startDate, endDate, email, name, lastName, tourName, totalPrice })
-        
+        const response = await Reservation.create({ startDate, endDate, user, guide, tour, totalPrice  })
+        console.log(response)
         res.json(response)
 
     } catch (error) {
-
+        console.log(error)
     }
 }
 
 exports.editReservation = async (req, res) => {
 
-    const { reservationId, startDate, endDate, email, name, lastName, tourName, totalPrice } = await req.body
+    const { reservationId, startDate, endDate, user, guide, tour, totalPrice  } = await req.body
 
     try {
         
-        const response = await Reservation.findByIdAndUpdate( reservationId, { startDate, endDate, email, name, lastName, tourName, totalPrice }, {new: true} )
+        const response = await Reservation.findByIdAndUpdate( reservationId, { startDate, endDate, user, guide, tour, totalPrice  }, {new: true} )
         
         res.json(response)
 

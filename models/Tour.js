@@ -4,17 +4,21 @@ const toursSchema = new Schema({
         type: String,
         required: true
     },
-    guide: String, //[{ type: Schema.Types.ObjectId, ref: "User" }],
+    guide: [{ type: Schema.Types.ObjectId, ref: "User" }],
     priceDay: {
         type: String,
         required: true
     },
+    shortDescription: String,
     description: {
         type: String,
         required: true
     },
     amenities: [{ type: Schema.Types.ObjectId, ref: "Amenity" }],
-    pictures: Array
+    pictures: Array,
+    country: String,
+    area: String
+
     // availability: HOW?
     },  {
     timestamps: true

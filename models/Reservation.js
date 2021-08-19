@@ -8,11 +8,17 @@ const reservationsSchema = new Schema({
         type: Date,
         required: true
     },
-    email: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    name: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    lastName: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    tourName: [{ type: Schema.Types.ObjectId, ref: "Tour" }],
-    totalPrice: String
+    totalPrice: {
+        type: String,
+        required: true
+    },
+    user: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    tour: [{ type: Schema.Types.ObjectId, ref: "Tour" }],
+    guide: String,
+    totalPrice: {
+        type: String,
+        required: true
+    }
 },  {
     timestamps: true
 })
