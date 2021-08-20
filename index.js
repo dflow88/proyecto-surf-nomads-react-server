@@ -21,9 +21,10 @@ app.use(express.json({extended: true}))
 
 app.use("/api/auth", require('./routes/auth'))
 app.use("/api/users", require('./routes/users'))
-app.use('/api/amenities', require('./routes/amenities'))
+// app.use('/api/amenities', require('./routes/amenities'))
 app.use('/api/tours', require('./routes/tours'))
 app.use('/api/reservations', require('./routes/reservations'))
+app.use('/api/sessions', require('./routes/sessions'))
 
 app.get("/", (req,res) => {
     res.send("Proyect Surf Nomada Active")

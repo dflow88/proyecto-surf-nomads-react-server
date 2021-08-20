@@ -1,27 +1,27 @@
-const Amenity = require('../models/Amenity')
+// const Amenity = require('../models/Amenity')
 
-exports.getAmenities = async (req,res) => {
+// exports.getAmenities = async (req,res) => {
 
-    try {
+//     try {
 
-        const amenities = await Amenity.find({})
+//         const amenities = await Amenity.find({})
 
-        return res.json({amenities})
+//         return res.json({amenities})
 
-    } catch (error) {
+//     } catch (error) {
 
-    }
-}
+//     }
+// }
 
-exports.createAmenity = async (req, res) => {
+// exports.createAmenity = async (req, res) => {
 
-    const { name } = req.body
+//     const { name } = req.body
 
 
-    Amenity.create({
-            name
-        })
+//     Amenity.create({
+//             name
+//         })
         
-    console.log(name)
-}
+//     console.log(name)
+// }
 

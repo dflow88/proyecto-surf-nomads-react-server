@@ -20,4 +20,6 @@ router.post(
     ]    //MIDDLEWARE DE VALIDACION
  , usersController.createUser)
 
+router.post('/edit', usersController.editUser)
+
 module.exports = router

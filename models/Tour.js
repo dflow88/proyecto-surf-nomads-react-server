@@ -14,8 +14,11 @@ const toursSchema = new Schema({
         type: String,
         required: true
     },
-    amenities: [{ type: Schema.Types.ObjectId, ref: "Amenity" }],
-    pictures: Array,
+    // amenities: [{ type: Schema.Types.ObjectId, ref: "Amenity" }],
+    picture1: String,
+    picture2: String,
+    picture3: String,
+    picture4: String,
     country: String,
     area: String
 

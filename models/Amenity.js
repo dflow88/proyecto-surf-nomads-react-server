@@ -1,15 +1,15 @@
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
-const amenitiesSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-})
+// const amenitiesSchema = mongoose.Schema({
+//     name: {
+//         type: String,
+//         required: true
+//     },
+// })
 
-//MODELO
-const Amenity = mongoose.model('Amenity', amenitiesSchema)
+// //MODELO
+// const Amenity = mongoose.model('Amenity', amenitiesSchema)
 
-//EXPORTACION
-module.exports = Amenity
+// //EXPORTACION
+// module.exports = Amenity

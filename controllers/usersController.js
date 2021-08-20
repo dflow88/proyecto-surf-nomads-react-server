@@ -70,3 +70,17 @@ exports.createUser = async (req, res) => {
     }
 
 }
+
+exports.editUser = async (req, res) => {
+    console.log(req.body)
+    const { userId, firstName, lastName, email, picture } = req.body
+
+    try {
+        const editedUser = await User.findByIdAndUpdate(userId, {firstName, lastName, email, picture})
+        res.json(editedUser)
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}

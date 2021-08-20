@@ -23,6 +23,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.7",
     "nodemon": "^2.0.12",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "stripe": "^8.170.0"
   }
 }

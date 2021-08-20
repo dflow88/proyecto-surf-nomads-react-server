@@ -6,7 +6,6 @@ exports.getTours = async (req,res) => {
     try {
 
         const tours = await Tour.find({})
-        console.log(tours)
         res.json(tours)
 
     } catch (error) {
@@ -22,7 +21,6 @@ exports.createTour = async (req, res) => {
 
     try {
         
-        console.log(name)
         const response = await Tour.create({ name, area, country, guide, priceDay, shortDescription, description, amenities })
         
         res.json(response)
@@ -35,14 +33,12 @@ exports.createTour = async (req, res) => {
 exports.findTour = async (req, res) => {
 
     const  tourId  = req.params.tourId
-    console.log(tourId)
 
     try {
         
         const response = await Tour.findById(tourId).populate({
             path: "guide"
         })
-        console.log(response)
         res.json(response)
 
     } catch (error) {
@@ -52,11 +48,11 @@ exports.findTour = async (req, res) => {
 
 exports.editTour = async (req, res) => {
 
-    const { tourId, name, area, country, guide, priceDay, shortDescription, description, amenities } = await req.body
+    const { tourId, name, area, country, guide, priceDay, shortDescription, description, amenities, picture1, picture2, picture3, picture4 } = await req.body
 
     try {
         
-        const response = await Tour.findByIdAndUpdate( tourId, {name, area, country, guide, priceDay, shortDescription, description, amenities}, {new: true} )
+        const response = await Tour.findByIdAndUpdate( tourId, {name, area, country, guide, priceDay, shortDescription, description, amenities, picture1, picture2, picture3, picture4}, {new: true} )
         
         res.json(response)
 
@@ -72,7 +68,6 @@ exports.deleteTour = async (req, res) => {
     try {
         
         const response = await Tour.findByIdAndDelete(tourId)
-        console.log(response)
         res.json(response)
 
     } catch (error) {
