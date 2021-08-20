@@ -10,7 +10,7 @@ exports.generateSession = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
         line_items: [
             {
-                price: 'price_1JQKb0KUZvJxZ0r3i5ZFIeOE',
+                price: response.stripeId,
                 quantity: response.totalDays
             },
         ],

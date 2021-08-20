@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const reservationsSchema = new Schema({
-    stripeId: String,
+    
     startDate: {
         type: Date,
         required: true

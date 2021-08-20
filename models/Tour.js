@@ -20,7 +20,8 @@ const toursSchema = new Schema({
     picture3: String,
     picture4: String,
     country: String,
-    area: String
+    area: String,
+    stripeId: String
 
     // availability: HOW?
     },  {
