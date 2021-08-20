@@ -17,11 +17,11 @@ exports.getTours = async (req,res) => {
 exports.createTour = async (req, res) => {
 
 
-    const { name, area, country, guide, priceDay, shortDescription, description, amenities } = await req.body
+    const { name, area, country, guide, priceDay, shortDescription, description, amenities, picture1, picture2, picture3, picture4 } = await req.body
 
     try {
         
-        const response = await Tour.create({ name, area, country, guide, priceDay, shortDescription, description, amenities })
+        const response = await Tour.create({ name, area, country, guide, priceDay, shortDescription, description, amenities, picture1, picture2, picture3, picture4 })
         
         res.json(response)
 
